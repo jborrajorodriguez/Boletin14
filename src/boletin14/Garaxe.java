@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
  */
 public class Garaxe {
 
-    int numeroCoches, max=5;
-    String matricula;
+    protected int numeroCoches,maximoDeCoches=5;
+    protected String matricula;
 
     /**
      * Constructor por defecto.
@@ -16,30 +16,27 @@ public class Garaxe {
     public Garaxe() {
     }
 
-    /**
-     * Método setMatricula que sirve para introduicir una matricula.
-     *
-     * @param matricula
-     */
-    public void setMatricula(String matricula) {
-        this.matricula=matricula;
+    
+    public void entradaGaraxe() {
+
+        if (numeroCoches<maximoDeCoches) {
+            
+            JOptionPane.showMessageDialog(null,"Plazas Dispoñibles "+(maximoDeCoches-numeroCoches));
+            numeroCoches++;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"COMPLETO");
+        }
+
     }
 
-//    public void entradaGaraxe() {
-//
-//        if (max>0) {
-//            JOptionPane.showMessageDialog(null,"Plazas Dispoñibles "+max);
-//        }
-//        else {
-//            JOptionPane.showMessageDialog(null,"COMPLETO");
-//        }
-//
+    public void salidaGaraxe() {
+            System.out.println("****FACTURA**** \nMatricula coche: "+matricula+"\nTempo :"+"\nPrecio :"+"\nCartos Recibidos: "+"\nCartos Devoltos:");
+        }
+    
+
+//    @Override
+//    public String toString() {
+//        return ("****FACTURA**** \nMatricula coche: "+matricula+"\nTempo :"+"\nPrecio :"+"\nCartos Recibidos: "+"\nCartos Devoltos:");
 //    }
-    
-    
-
-    @Override
-    public String toString() {
-        return ("****FACTURA**** \nMatricula coche: "+matricula+"\nTempo :"+"\nPrecio :"+"\nCartos Recibidos: "+"\nCartos Devoltos:");
-    }
 }
